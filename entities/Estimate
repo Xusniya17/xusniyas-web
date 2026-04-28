@@ -1,0 +1,95 @@
+{
+  "name": "Estimate",
+  "type": "object",
+  "properties": {
+    "city": {
+      "type": "string",
+      "description": "City in Uzbekistan"
+    },
+    "district": {
+      "type": "string",
+      "description": "District or neighborhood"
+    },
+    "property_type": {
+      "type": "string",
+      "enum": [
+        "apartment",
+        "house",
+        "townhouse",
+        "villa",
+        "land"
+      ],
+      "description": "Type of property"
+    },
+    "area_sqm": {
+      "type": "number",
+      "description": "Total area in square meters"
+    },
+    "rooms": {
+      "type": "number",
+      "description": "Number of rooms"
+    },
+    "floor": {
+      "type": "number",
+      "description": "Floor number (for apartments)"
+    },
+    "total_floors": {
+      "type": "number",
+      "description": "Total floors in building"
+    },
+    "year_built": {
+      "type": "number",
+      "description": "Year the property was built"
+    },
+    "condition": {
+      "type": "string",
+      "enum": [
+        "new",
+        "euro_renovation",
+        "good",
+        "needs_repair",
+        "rough"
+      ],
+      "description": "Condition of the property"
+    },
+    "has_parking": {
+      "type": "boolean",
+      "default": false
+    },
+    "has_balcony": {
+      "type": "boolean",
+      "default": false
+    },
+    "estimated_price_usd": {
+      "type": "number",
+      "description": "AI-estimated price in USD"
+    },
+    "estimated_price_uzs": {
+      "type": "number",
+      "description": "AI-estimated price in UZS"
+    },
+    "price_per_sqm_usd": {
+      "type": "number",
+      "description": "Price per square meter in USD"
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "description": "Confidence level of the estimate"
+    },
+    "ai_notes": {
+      "type": "string",
+      "description": "AI analysis notes"
+    }
+  },
+  "required": [
+    "city",
+    "property_type",
+    "area_sqm",
+    "rooms"
+  ]
+}
